@@ -1,2 +1,23 @@
-<app-sidenav></app-sidenav>
-<router-outlet></router-outlet>
+<mat-drawer-container class="example-container" autosize [hasBackdrop]="true">
+    <mat-drawer #drawer class="example-sidenav" mode="over">
+        <app-menu-list></app-menu-list>
+    </mat-drawer>
+
+    <mat-toolbar>
+        <button class="toolbar-button" mat-icon-button type="button" (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>My App</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>share</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div class="table-container">
+        <app-table></app-table>
+    </div>
+    <router-outlet></router-outlet>
+</mat-drawer-container>
