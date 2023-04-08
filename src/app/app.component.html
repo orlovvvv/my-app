@@ -5,13 +5,13 @@
             aria-label="Menu icon button that opens and closes the menu">
             <mat-icon>menu</mat-icon>
         </button>
-        <span>Moja aplikacja testowa</span>
+        <span>{{title}}</span>
         <span class="toolbar-spacer"></span>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-            <mat-icon>account_circle</mat-icon>
+        <button mat-raised-button color="primary" class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>logout</mat-icon>
+            Wyloguj się
         </button>
     </mat-toolbar>
-
     <mat-drawer-container class="sidenav-container" autosize [hasBackdrop]="true">
         <mat-drawer #drawer class="sidenav-container" mode="over" [autoFocus]="false">
             <!-- Sidenav insides -->
@@ -29,7 +29,7 @@
                     </a>
                 </mat-list-item>
                 <mat-list-item>
-                    <a routerLink="/transactions" mat-raised-button class="menu-button">
+                    <a routerLink="/payments" mat-raised-button class="menu-button">
                         <mat-icon>payments</mat-icon>
                         Płatności
                     </a>
