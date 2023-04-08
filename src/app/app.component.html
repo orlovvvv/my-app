@@ -1,23 +1,50 @@
-<mat-drawer-container class="example-container" autosize [hasBackdrop]="true">
-    <mat-drawer #drawer class="example-sidenav" mode="over">
-        <app-menu-list></app-menu-list>
-    </mat-drawer>
-
+<div class="screen-container">
     <mat-toolbar>
-        <button class="toolbar-button" mat-icon-button type="button" (click)="drawer.toggle()">
+        <!-- Toolbar with buttons and logo -->
+        <button class="toolbar-button" mat-icon-button type="button" (click)="drawer.toggle()"
+            aria-label="Menu icon button that opens and closes the menu">
             <mat-icon>menu</mat-icon>
         </button>
-        <span>My App</span>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button>
+        <span>Moja aplikacja testowa</span>
+        <span class="toolbar-spacer"></span>
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-            <mat-icon>share</mat-icon>
+            <mat-icon>account_circle</mat-icon>
         </button>
     </mat-toolbar>
-    <div class="table-container">
-        <app-table></app-table>
-    </div>
-    <router-outlet></router-outlet>
-</mat-drawer-container>
+
+    <mat-drawer-container class="sidenav-container" autosize [hasBackdrop]="true">
+        <mat-drawer #drawer class="sidenav-container" mode="over" [autoFocus]="false">
+            <!-- Sidenav insides -->
+            <mat-list>
+                <mat-list-item>
+                    <a routerLink="/" mat-raised-button class="menu-button">
+                        <mat-icon>home</mat-icon>
+                        Strona główna
+                    </a>
+                </mat-list-item>
+                <mat-list-item>
+                    <a routerLink="/users" mat-raised-button class="menu-button">
+                        <mat-icon>group</mat-icon>
+                        Użytkownicy
+                    </a>
+                </mat-list-item>
+                <mat-list-item>
+                    <a routerLink="/transactions" mat-raised-button class="menu-button">
+                        <mat-icon>payments</mat-icon>
+                        Płatności
+                    </a>
+                </mat-list-item>
+                <mat-list-item>
+                    <a routerLink="/settings" mat-raised-button class="menu-button">
+                        <mat-icon>settings</mat-icon>
+                        Ustawienia
+                    </a>
+                </mat-list-item>
+            </mat-list>
+        </mat-drawer>
+        <div class="content-container">
+            <!-- Router outlet will be here -->
+            <router-outlet />
+        </div>
+    </mat-drawer-container>
+</div>

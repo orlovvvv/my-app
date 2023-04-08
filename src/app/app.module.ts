@@ -6,18 +6,30 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
-import { MenuListComponent } from './menu/menu-list/menu-list.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { TableComponent } from './shared/table/table.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatRippleModule } from '@angular/material/core';
+import { ListComponent } from './shared/list/list.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { UsersComponent } from './users/users.component';
+import { HomeComponent } from './home/home.component';
+import { PaymentsComponent } from './payments/payments.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuListComponent,
-    TableComponent
+    TableComponent,
+    ListComponent,
+    SpinnerComponent,
+    UsersComponent,
+    HomeComponent,
+    PaymentsComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +40,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatListModule,
     MatIconModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatRippleModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
